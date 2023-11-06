@@ -1,0 +1,13 @@
+.bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+
+.searchbar {
+    width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
