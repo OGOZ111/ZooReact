@@ -5,7 +5,7 @@ const CardH = (props) => {
     <div>
       <div className="card">
         <img
-          src="src/assets/Steve-Irwin-snake-2002.webp"
+          src={`https://source.unsplash.com/400x400/?${props.name}`}
           alt="unsplash random image"
         />
         <div>
@@ -13,9 +13,11 @@ const CardH = (props) => {
 
           <div className="info">
             <button>-</button>
-            <span className="material-symbols-outlined">{props.likes}</span>
+            <span className="mat">{props.likes}</span>
             <button>+</button>
-            <button className="close">close</button>
+            <button onClick={props.click} className="close">
+              close
+            </button>
           </div>
         </div>
       </div>
