@@ -10,6 +10,7 @@ function App() {
 
   const removeHandler = (name) => {
     const updatedArray = animals.filter((animal) => animal.name !== name);
+
     setAnimals(updatedArray);
   };
 

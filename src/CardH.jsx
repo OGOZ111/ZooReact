@@ -13,7 +13,7 @@ const CardH = (props) => {
 
           <div className="info">
             <button>-</button>
-            <span className="mat">{props.likes}</span>
+            <span className="likes">{props.likes}</span>
             <button>+</button>
             <button onClick={props.click} className="close">
               close
