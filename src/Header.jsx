@@ -19,7 +19,7 @@ const Header = () => {
           className="searchbar"
           type="text"
           placeholder="Search for animal"
-        ></input>
+        />
       </div>
     </header>
   );

@@ -12,9 +12,17 @@ const CardH = (props) => {
           <h2>{props.name}</h2>
 
           <div className="info">
-            <button>-</button>
-            <span className="likes">{props.likes}</span>
-            <button>+</button>
+            <button className="control__btn" onClick={props.clickminus}>
+              -
+            </button>
+            <p className="likes">{props.likes} </p>
+            <span className="material-icons">
+              {props.likes >= 0 ? "favourite" : "heart_broken"}
+            </span>
+
+            <button className="control__btn" onClick={props.clickplus}>
+              +
+            </button>
             <button onClick={props.click} className="close">
               close
             </button>
