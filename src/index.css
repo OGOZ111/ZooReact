@@ -68,9 +68,34 @@ button:focus-visible {
   max-height: 300px;
 }
 
+
+
+.containerbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+
+}
+
 nav ul li {
-  display: inline-block;
-  margin: 30px;}
+  margin-right: 20px;
+  font-size: 25px;
+
+}
+
+a.active {
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: black;
+}
+
+
+
 
 
 .searchbar {
@@ -83,6 +108,5 @@ img {
   border-top-left-radius: 7px;
  
 }
-
 
 

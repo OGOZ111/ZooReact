@@ -2,10 +2,10 @@ import CardH from "../components/CardH";
 import Header from "../components/Header";
 
 function BirdFunc({
-  removeHandler,
-  likesHandler,
+  removeHandler2,
+  likesHandler2,
   search,
-  animals,
+  birds,
   searchHandler,
 }) {
   return (
@@ -18,19 +18,19 @@ function BirdFunc({
         onChange={searchHandler}
       />
       <div className="cards">
-        {animals
-          .filter((animal) =>
-            animal.name.toLowerCase().includes(search.toLowerCase())
+        {birds
+          .filter((bird) =>
+            bird.name.toLowerCase().includes(search.toLowerCase())
           )
 
-          .map((animal) => (
+          .map((bird) => (
             <CardH
-              key={animal.name}
-              name={animal.name}
-              likes={animal.likes}
-              click={() => removeHandler(animal.name)}
-              clickplus={() => likesHandler(animal.name, "add")}
-              clickminus={() => likesHandler(animal.name, "remove")}
+              key={bird.name}
+              name={bird.name}
+              likes={bird.likes}
+              click={() => removeHandler2(bird.name)}
+              clickplus={() => likesHandler2(bird.name, "add")}
+              clickminus={() => likesHandler2(bird.name, "remove")}
             />
           ))}
       </div>

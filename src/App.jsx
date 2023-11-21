@@ -7,6 +7,7 @@ import About from "./routes/About";
 import Root from "./routes/Root";
 import ErrorPage from "./routes/Error";
 import AnimalFunc from "./routes/Animals";
+import BirdFunc from "./routes/Birds";
 
 function App() {
   const [animals, setAnimals] = useState(animals1);
@@ -44,6 +45,27 @@ function App() {
 
   // BIRDS
 
+  const removeHandler2 = (name) => {
+    const updatedArray2 = birds.filter((bird) => bird.name !== name);
+
+    setBirds(updatedArray2);
+  };
+
+  const likesHandler2 = (name, action) => {
+    const updatedArray2 = birds.map((bird) => {
+      if (bird.name === name) {
+        if (action === "add") {
+          return { ...bird, likes: bird.likes + 1 };
+        } else {
+          return { ...bird, likes: bird.likes - 1 };
+        }
+      } else {
+        return bird;
+      }
+    });
+    setBirds(updatedArray2);
+  };
+
   const router = createBrowserRouter([
     // {path: '/auth', element:<Authlayout />, children:[{}], [{}] },
 
@@ -65,6 +87,19 @@ function App() {
             />
           ),
         },
+        {
+          path: "/birds",
+          element: (
+            <BirdFunc
+              search={search}
+              likesHandler2={likesHandler2}
+              removeHandler2={removeHandler2}
+              birds={birds}
+              searchHandler={searchHandler}
+            />
+          ),
+        },
+
         { path: "/about", element: <About /> },
       ],
     },
