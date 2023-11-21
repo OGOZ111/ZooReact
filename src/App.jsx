@@ -1,13 +1,19 @@
 import "./App.css";
-import Header from "./Header";
-import CardH from "./CardH";
 import { useState } from "react";
-import { animals1 } from "./animalsList";
-import Footer from "./Footer";
+import { animals1, birds1 } from "./animalsList";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Root from "./routes/Root";
+import ErrorPage from "./routes/Error";
+import AnimalFunc from "./routes/Animals";
 
 function App() {
   const [animals, setAnimals] = useState(animals1);
+  const [birds, setBirds] = useState(birds1);
   const [search, setSearch] = useState("");
+
+  // ANIMALS //////////////////////////////////////////////////////////////////////////
 
   const removeHandler = (name) => {
     const updatedArray = animals.filter((animal) => animal.name !== name);
@@ -34,36 +40,39 @@ function App() {
     setAnimals(updatedArray);
   };
 
+  ////////////////////////////////////////////////////////////////////
+
+  // BIRDS
+
+  const router = createBrowserRouter([
+    // {path: '/auth', element:<Authlayout />, children:[{}], [{}] },
+
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        { path: "/", element: <Home /> },
+        {
+          path: "/animals",
+          element: (
+            <AnimalFunc
+              search={search}
+              likesHandler={likesHandler}
+              removeHandler={removeHandler}
+              animals={animals}
+              searchHandler={searchHandler}
+            />
+          ),
+        },
+        { path: "/about", element: <About /> },
+      ],
+    },
+  ]);
+
   return (
     <div>
-      <Header />
-
-      <main>
-        <input
-          className="searchbar"
-          type="text"
-          placeholder="Search for animal"
-          onChange={searchHandler}
-        />
-        <div className="cards">
-          {animals
-            .filter((animal) =>
-              animal.name.toLowerCase().includes(search.toLowerCase())
-            )
-
-            .map((animal) => (
-              <CardH
-                key={animal.name}
-                name={animal.name}
-                likes={animal.likes}
-                click={() => removeHandler(animal.name)}
-                clickplus={() => likesHandler(animal.name, "add")}
-                clickminus={() => likesHandler(animal.name, "remove")}
-              />
-            ))}
-        </div>
-      </main>
-      <Footer />
+      <RouterProvider router={router} />
     </div>
   );
 }

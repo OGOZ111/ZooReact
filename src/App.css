@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-image: url(/src/assets/Wallpaper.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
 body {
@@ -27,5 +31,7 @@ main {
     min-width: 320px;
     min-height: 100vh;
   }
+
+
 
 

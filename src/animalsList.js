@@ -121,7 +121,7 @@ export const animals1 = [
   { name: "zebra", likes: 0 },
 ];
 
-export const birds = [
+export const birds1 = [
   { name: "Sparrow", likes: 0 },
   { name: "Starling", likes: 0 },
   { name: "Pigeon", likes: 0 },

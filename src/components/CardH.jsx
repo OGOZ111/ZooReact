@@ -1,4 +1,4 @@
-import "./CardH.css";
+import "../CardH.css";
 
 const CardH = (props) => {
   return (
