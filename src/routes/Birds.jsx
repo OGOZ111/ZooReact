@@ -7,11 +7,10 @@ function BirdFunc({
   search,
   birds,
   searchHandler,
-  cleanHandler,
 }) {
   return (
     <main>
-      <Header onclick={cleanHandler} />
+      <Header />
       <input
         className="searchbar"
         type="text"
