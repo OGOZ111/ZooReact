@@ -26,6 +26,10 @@ function App() {
     setSearch(event.target.value);
   };
 
+  const cleanHandler = () => {
+    setSearch("");
+  };
+
   const likesHandler = (name, action) => {
     const updatedArray = animals.map((animal) => {
       if (animal.name === name) {
@@ -74,7 +78,7 @@ function App() {
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "/", element: <Home /> },
+        { path: "/home", element: <Home /> },
         {
           path: "/animals",
           element: (

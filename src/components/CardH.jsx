@@ -23,6 +23,7 @@ const CardH = (props) => {
             <button className="control__btn" onClick={props.clickplus}>
               +
             </button>
+            <button>See more</button>
             <button onClick={props.click} className="close">
               close
             </button>

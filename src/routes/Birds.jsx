@@ -7,14 +7,15 @@ function BirdFunc({
   search,
   birds,
   searchHandler,
+  cleanHandler,
 }) {
   return (
     <main>
-      <Header />
+      <Header onclick={cleanHandler} />
       <input
         className="searchbar"
         type="text"
-        placeholder="Search for animal"
+        placeholder="Search Birds"
         onChange={searchHandler}
       />
       <div className="cards">
